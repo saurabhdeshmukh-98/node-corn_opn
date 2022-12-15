@@ -1,4 +1,4 @@
-const {db} =require('../config/db')
+const { db } = require("../config/db");
 const userContro = require("../entity/user");
 
 const add = async (req, res) => {
@@ -17,11 +17,16 @@ const add = async (req, res) => {
 };
 
 // const deleteDetails = async (req, res) => {
+//   const currentDate = new Date();
+//   const currentDayOfMonth = currentDate.getDate();
+//   const currentMonth = currentDate.getMonth(); // Be careful! January is 0, not 1
+//   const currentYear = currentDate.getFullYear();
+//   const dateString = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
 //   try {
 //     const resp = await userContro.destroy(req.body, {
 //       where: {
-//         id: req.params.id,
-//         ex_id:req.params.ex_id
+//         [Op.gte]: dateString,
+//         //ex_date:Date
 //       },
 //     });
 //     res.status(200).json({
@@ -34,6 +39,7 @@ const add = async (req, res) => {
 //     });
 //   }
 // };
-module.exports={
-    add,
-}
+module.exports = {
+  // deleteDetails,
+  add
+};
